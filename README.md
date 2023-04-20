@@ -33,7 +33,7 @@ Project was created with the help of the amazing teachers at scrimba in the [Lea
 ## What I learn
 
 #### Key takeaways:
--Arrays are an important part of any web app of project better start digging deep into them. In this project, we had many examples of arrays. See below:
+-Arrays are an important when building WebApps, so better start digging deep into them as well as clearly understanding how to use both arrays and objects to collect data and return it to the dom. In this project, we had many examples of arrays and objects working together. a.e:
 
 
 <code>
