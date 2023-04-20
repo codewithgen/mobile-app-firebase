@@ -1,21 +1,65 @@
-# coc46466ab798680b94431edb
 
-Quick start:
+# AddToCart
 
-```
-$ npm install
-$ npm start
-````
+This is a firebase application that I created with the help of the tutorials on scrimba.
 
-Head over to https://vitejs.dev/ to learn more about using vite
-## About Scrimba
 
-At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
-If we succeed with this, it will give anyone who wants to become a software developer a realistic shot at succeeding, regardless of where they live and the size of their wallets 🎉
-The Frontend Developer Career Path aims to teach you everything you need to become a Junior Developer, or you could take a deep-dive with one of our advanced courses 🚀
+## Table of contents
 
-- [Our courses](https://scrimba.com/allcourses)
+ - [Source](/#Sources)
+ - [Technology](/#Technology)
+ - [Screenshot](/#Screenshot)
+ - [What I learnt](/#WhatILearnt)
+ - [Code Reference](/#codeReference)
+
+
+
+## Sources
+Project was created with the help of the amazing teachers at scrimba in the [Learn Firebase Course](https://scrimba.com/learn/firebase), you can follow along.
+
+## Technology/Programs
+
+- HTML
+- CSS
+- JavaScript
+- Firebase 
+
+
+## Screenshots
+
+!["How will it look"](/assets/project-screenshot.png)
+
+
+## What I learn
+
+#### Key takeaways:
+-Arrays are an important part of any web app of project better start digging deep into them. In this project, we had many examples of arrays. See below:
+
+
+<code>
+ onValue(shoppingListInDB, function(snapshot) {
+    if (snapshot.exists()) {
+        let itemsArray = Object.entries(snapshot.val())
+    
+        clearShoppingListEl()
+        
+        for (let i = 0; i < itemsArray.length; i++) {
+            let currentItem = itemsArray[i]
+            let currentItemID = currentItem[0]
+            let currentItemValue = currentItem[1]
+            
+            appendItemToShoppingListEl(currentItem)
+        }    
+    } else {
+        shoppingListEl.innerHTML = "If is blank you don't need anything..."
+    }
+})
+</code>
+
+## Deployment
+I deployed by website by using [Netlify]
+
+## Scrimba
+- [Their courses](https://scrimba.com/allcourses)
 - [The Frontend Career Path](https://scrimba.com/learn/frontend)
-- [Become a Scrimba Pro member](https://scrimba.com/pricing)
 
-Happy Coding!

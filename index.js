@@ -1,8 +1,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
 import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
+// database URL 
 const appSettings = {
-    databaseURL: "https://realtime-database-df319-default-rtdb.europe-west1.firebasedatabase.app/"
+    databaseURL: "https://add-to-cart-app-138eb-default-rtdb.firebaseio.com/"
 }
 
 const app = initializeApp(appSettings)
@@ -13,6 +14,7 @@ const inputFieldEl = document.getElementById("input-field")
 const addButtonEl = document.getElementById("add-button")
 const shoppingListEl = document.getElementById("shopping-list")
 
+// button onclick to addItem
 addButtonEl.addEventListener("click", function() {
     let inputValue = inputFieldEl.value
     
@@ -20,6 +22,8 @@ addButtonEl.addEventListener("click", function() {
     
     clearInputFieldEl()
 })
+
+// function to retrive database values
 
 onValue(shoppingListInDB, function(snapshot) {
     if (snapshot.exists()) {
@@ -35,17 +39,23 @@ onValue(shoppingListInDB, function(snapshot) {
             appendItemToShoppingListEl(currentItem)
         }    
     } else {
-        shoppingListEl.innerHTML = "No items here... yet"
+        shoppingListEl.innerHTML = "If is blank you don't need anything..."
     }
 })
+
+// to clear the list
 
 function clearShoppingListEl() {
     shoppingListEl.innerHTML = ""
 }
 
+//  to clear the input field text after logging item
+
 function clearInputFieldEl() {
     inputFieldEl.value = ""
 }
+
+// to add item to list and adding to the DOM
 
 function appendItemToShoppingListEl(item) {
     let itemID = item[0]
@@ -54,7 +64,7 @@ function appendItemToShoppingListEl(item) {
     let newEl = document.createElement("li")
     
     newEl.textContent = itemValue
-    
+    // to remove items onclick
     newEl.addEventListener("click", function() {
         let exactLocationOfItemInDB = ref(database, `shoppingList/${itemID}`)
         
