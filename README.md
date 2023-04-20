@@ -57,7 +57,7 @@ Project was created with the help of the amazing teachers at scrimba in the [Lea
 </code>
 
 ## Deployment
-I deployed by website by using [Netlify]
+I deployed by website by using [Netlify](https://addtocart-app-bygenn.netlify.app/)
 
 ## Scrimba
 - [Their courses](https://scrimba.com/allcourses)
